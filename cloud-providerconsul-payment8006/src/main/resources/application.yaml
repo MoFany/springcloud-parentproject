@@ -1,0 +1,16 @@
+# 服务提供者端口号
+server:
+  port: 8006
+
+# 配置consul服务注册中心的服务提供者
+spring:
+  application:
+    name: consul-provider-payment   # 服务提供者的微服务名
+
+  cloud:
+    consul:
+      host: localhost   # consul的本地主机名
+      port: 8500        # 主机端口号
+      # hostname:127.0.0.1
+      discovery:
+        service-name: ${spring.application.name}

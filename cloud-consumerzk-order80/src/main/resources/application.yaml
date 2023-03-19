@@ -1,0 +1,12 @@
+# 服务消费者端口
+server:
+  port: 80
+
+# 服务别名---注册zookeeper到注册中心名称
+spring:
+  application:
+    name: cloud-consumer-order
+  cloud:
+    zookeeper:
+      # 单个zookeeper服务器的ip:端口
+      connect-string: 192.168.85.150:2181

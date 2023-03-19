@@ -1,0 +1,21 @@
+server:
+  port: 80
+# eureka配置
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      # 集群
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 200000
+        readTimeout: 200000
+
+logging:
+  level:
+    # Feign日志打印以什么级别监控哪个接口
+    com.mofany.service.PaymentFeignService: debug
